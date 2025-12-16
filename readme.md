@@ -1,4 +1,4 @@
-# 🐺 Instalador Automático - Return to Castle Wolfenstein
+# 🐺 Instalador Automático - (iortcw) Return to Castle Wolfenstein
 
 [![Linux](https://img.shields.io/badge/Linux-FCC624?style=flat&logo=linux&logoColor=black)](https://www.linux.org/)
 [![Bash](https://img.shields.io/badge/Bash-4EAA25?style=flat&logo=gnu-bash&logoColor=white)](https://www.gnu.org/software/bash/)
@@ -22,7 +22,7 @@ O script apenas instala as ferramentas e configura o ambiente para jogar no Linu
 
 ## 📋 O que este script faz?
 
-O `install_rtcw.sh` automatiza todo o processo de instalação:
+O `install_iortcw_rtcw.sh` automatiza todo o processo de instalação:
 
 ✅ **Instala dependências** necessárias (git, compiladores, bibliotecas SDL2/OpenAL)  
 ✅ **Cria a estrutura de pastas** (`~/Games/iortcw`)  
@@ -185,21 +185,21 @@ xdg-open ~/.wolf/main/
 
 ```bash
 # Clone este repositório ou baixe o script
-wget https://seu-link/install_rtcw.sh
+wget https://github.com/hudsonalbuquerque97-sys/iortcw_RTCW_install/blob/main/install_iortcw_rtcw.sh
 # ou
-curl -O https://seu-link/install_rtcw.sh
+curl -O https://github.com/hudsonalbuquerque97-sys/iortcw_RTCW_install/blob/main/install_iortcw_rtcw.sh
 ```
 
 ### Passo 2: Dar permissão de execução
 
 ```bash
-chmod +x install_rtcw.sh
+chmod +x install_iortcw_rtcw.sh
 ```
 
 ### Passo 3: Executar o instalador
 
 ```bash
-./install_rtcw.sh
+./install_iortcw_rtcw.sh
 ```
 
 O script irá:
