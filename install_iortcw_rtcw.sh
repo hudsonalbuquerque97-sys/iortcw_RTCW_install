@@ -14,18 +14,19 @@ YELLOW='\033[1;33m'
 BLUE='\033[0;34m'
 NC='\033[0m' # Sem cor
 
-# Função para mostrar barra de progresso
+# Função para mostrar barra de progresso simples
 show_progress() {
     local current=$1
     local total=$2
     local message=$3
     local percent=$((current * 100 / total))
-    local filled=$((percent / 2))
-    local empty=$((50 - filled))
+    local filled=$((percent / 5))  # 20 caracteres no total (100/5)
+    local empty=$((20 - filled))
     
-    printf "\r${BLUE}[${GREEN}"
-    printf "%${filled}s" | tr ' ' '█'
-    printf "${NC}%${empty}s${BLUE}] ${percent}%% ${NC}- ${message}"
+    echo -n "["
+    for ((i=0; i<filled; i++)); do echo -n "="; done
+    for ((i=0; i<empty; i++)); do echo -n " "; done
+    echo "] $percent% - $message"
 }
 
 # Função para mostrar mensagens
@@ -72,7 +73,8 @@ CURRENT_STEP=0
 # PASSO 1: Verificar e instalar dependências
 # ============================================================================
 CURRENT_STEP=1
-show_progress $CURRENT_STEP $TOTAL_STEPS "Verificando dependências..."
+echo ""
+show_progress $CURRENT_STEP $TOTAL_STEPS "Verificando dependências"
 echo ""
 
 log_info "Verificando dependências necessárias..."
@@ -104,7 +106,8 @@ sleep 1
 # PASSO 2: Criar diretório Games se não existir
 # ============================================================================
 CURRENT_STEP=2
-show_progress $CURRENT_STEP $TOTAL_STEPS "Criando estrutura de diretórios..."
+echo ""
+show_progress $CURRENT_STEP $TOTAL_STEPS "Criando estrutura de diretórios"
 echo ""
 
 if [ ! -d "$GAMES_DIR" ]; then
@@ -119,7 +122,8 @@ fi
 # PASSO 3: Clonar repositório iortcw
 # ============================================================================
 CURRENT_STEP=3
-show_progress $CURRENT_STEP $TOTAL_STEPS "Clonando repositório iortcw..."
+echo ""
+show_progress $CURRENT_STEP $TOTAL_STEPS "Clonando repositório iortcw"
 echo ""
 
 if [ -d "$INSTALL_DIR" ]; then
@@ -152,7 +156,8 @@ sleep 1
 # PASSO 4: Compilar versão Single Player
 # ============================================================================
 CURRENT_STEP=4
-show_progress $CURRENT_STEP $TOTAL_STEPS "Compilando Single Player..."
+echo ""
+show_progress $CURRENT_STEP $TOTAL_STEPS "Compilando Single Player"
 echo ""
 
 log_info "Iniciando compilação do Single Player..."
@@ -181,7 +186,8 @@ sleep 1
 # PASSO 5: Criar diretório de dados do jogo
 # ============================================================================
 CURRENT_STEP=5
-show_progress $CURRENT_STEP $TOTAL_STEPS "Criando diretório de dados..."
+echo ""
+show_progress $CURRENT_STEP $TOTAL_STEPS "Criando diretório de dados"
 echo ""
 
 log_info "Criando diretório $WOLF_DATA_DIR..."
@@ -202,7 +208,8 @@ sleep 2
 # PASSO 6: Criar script de execução
 # ============================================================================
 CURRENT_STEP=6
-show_progress $CURRENT_STEP $TOTAL_STEPS "Criando script de execução..."
+echo ""
+show_progress $CURRENT_STEP $TOTAL_STEPS "Criando script de execução"
 echo ""
 
 log_info "Criando script run_rtcw.sh..."
@@ -236,7 +243,8 @@ sleep 1
 # PASSO 7: Criar atalho no menu de aplicativos
 # ============================================================================
 CURRENT_STEP=7
-show_progress $CURRENT_STEP $TOTAL_STEPS "Criando atalho no menu..."
+echo ""
+show_progress $CURRENT_STEP $TOTAL_STEPS "Criando atalho no menu"
 echo ""
 
 log_info "Criando atalho no menu de aplicativos..."
@@ -281,7 +289,8 @@ sleep 1
 # PASSO 8: Finalização
 # ============================================================================
 CURRENT_STEP=8
-show_progress $CURRENT_STEP $TOTAL_STEPS "Finalizando instalação..."
+echo ""
+show_progress $CURRENT_STEP $TOTAL_STEPS "Finalizando instalação"
 echo ""
 echo ""
 
