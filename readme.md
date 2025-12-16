@@ -185,9 +185,9 @@ xdg-open ~/.wolf/main/
 
 ```bash
 # Clone este repositório ou baixe o script
-wget https://github.com/hudsonalbuquerque97-sys/iortcw_RTCW_install/blob/main/install_iortcw_rtcw.sh
+wget https://raw.githubusercontent.com/hudsonalbuquerque97-sys/iortcw_RTCW_install/refs/heads/main/install_iortcw_rtcw.sh
 # ou
-curl -O https://github.com/hudsonalbuquerque97-sys/iortcw_RTCW_install/blob/main/install_iortcw_rtcw.sh
+curl -O https://raw.githubusercontent.com/hudsonalbuquerque97-sys/iortcw_RTCW_install/refs/heads/main/install_iortcw_rtcw.sh
 ```
 
 ### Passo 2: Dar permissão de execução
